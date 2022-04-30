@@ -79,7 +79,7 @@ const generateAbout = (aboutText) => {
       <header>
         <div class="container flex-row justify-space-between align-center py-3">
           <h1 class="page-title text-secondary bg-dark py-2 px-3">${
-            header.name
+            header.projectTitle
           }</h1>
           <nav class="flex-row">
             <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" href="https://github.com/${
