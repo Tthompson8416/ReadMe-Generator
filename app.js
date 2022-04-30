@@ -1,4 +1,4 @@
-const { writeFile, copyFile} = require('./utils/generate-site.js');
+const { writeFile, copyFile} = require('./utils/generateMarkdown.js');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
@@ -6,13 +6,13 @@ const promptUser = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name? (Required)',
-      validate: nameInput => {
-        if (nameInput) {
+      name: 'projectTitle',
+      message: 'What is your project title? (Required)',
+      validate: projectTitleInput => {
+        if (projectTitleInput) {
           return true;
         } else {
-          console.log('Please enter your name!');
+          console.log('Please enter your project title!');
           return false;
         }
       }
