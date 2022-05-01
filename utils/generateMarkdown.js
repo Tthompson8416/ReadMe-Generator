@@ -1,10 +1,25 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === "MIT") {
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+} else if (license === "apache") {
+  return `[![License: apache](https://img.shields.io/badge/License-apache-blue.svg)](https://opensource.org/licenses/apache)`;
+} else if (license === "GNU") {
+  return `[![License: GNU](https://img.shields.io/badge/License-GNU-green.svg)](https://opensource.org/licenses/GNU)`;
+} else if (license === "ISC") {
+  return `[![License: ISC](https://img.shields.io/badge/License-ISC-red.svg)](https://opensource.org/licenses/ISC)`;
+  
+}; 
+
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+//   if (licenseLink === "MIT") {
+//     return `[MIT License](https://spdx.org/licenses/MIT.html)."`;
+//   }
+// }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
