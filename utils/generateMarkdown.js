@@ -1,39 +1,61 @@
-const fs = require('fs');
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license) {}
 
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/README.md', fileContent, err => {
-            // if there's an error, reject the promise and send the error to the promise's `.catch()` method
-            if (err) {
-                reject(err);
-                // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-                return;
-            }
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {}
 
-            // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-            resolve({
-                ok: true,
-                message: 'File Created'
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {}
 
-            });
-        });
-    });
-};
-const copyFile = contentCopy => {
-    return new Promise((resolve, reject) => {
-        fs.copyFile('./src/style.css', './dist/style.css', err => {
-            if (err) {
-                reject(err)
-                return;
-            }
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
 
-            resolve({
-                ok: true,
-                message: 'Stylesheet created'
-            });
-        });
-    });
 
-};
+  ## Description
+  
+  
+  ## Table of Contents 
+  
+  * [Installation](#installation)
+  
+  * [Usage](#usage)
+  
+  * [Contributing](#contributing)
+  
+  * [Tests](#tests)
+  
+  * [Questions](#questions)
+  
+  ## Installation
+  
+  To install necessary dependencies, run the following command:
+  
+  ## Usage
+  
+  
+  
+  
+    
+  ## Contributing
+  
+  
+  
+  ## Tests
+  
+  To run tests, run the following command:
+  
+  
+  ## Questions
+  
+  If you have any questions about the repo, open an issue or contact me directly at ${
+     
+    You can find more of my work at [${data.github}](https://github.com/$}
+    
+  
+}
 
-module.exports = { writeFile, copyFile };
+module.exports = generateMarkdown;
