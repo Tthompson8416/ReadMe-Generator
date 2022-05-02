@@ -3,8 +3,6 @@
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
-} else if (license === "apache") {
-  return `![License: apache](https://img.shields.io/badge/License-apache-blue.svg)`;
 } else if (license === "GNU") {
   return `![License: GNU](https://img.shields.io/badge/License-GNU-green.svg)`; 
 } else if (license === "ISC") {
@@ -16,63 +14,74 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-//   if (licenseLink === "MIT") {
-//     return `[MIT License](https://spdx.org/licenses/MIT.html)."`;
-//   }
- }
+  if (licenseLink === "MIT") {
+    return `[MIT License](https://spdx.org/licenses/MIT.html)."`;
+  } else if (licenseLink === "GNU") {
+    return `[GNU License](https://spdx.org/licenses/GNU.html)."`;
+  } else if (licenseLink === "ISC") {
+    return `[ISC License](https://spdx.org/licenses/ISC.html)."`;
+
+}
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  return `## License 
+
+${renderLicenseLink(license)}`
+}
+
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)}
 
 
-  ## Description
+## Description
+
+
+## Table of Contents 
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+## Usage
+
+
+${renderLicenseSection(data.license)}
+
   
-  
-  ## Table of Contents 
-  
-  * [Installation](#installation)
-  
-  * [Usage](#usage)
-  
-  * [Contributing](#contributing)
-  
-  * [Tests](#tests)
-  
-  * [Questions](#questions)
-  
-  ## Installation
-  
-  To install necessary dependencies, run the following command:
-  
-  ## Usage
-  
-  
-  
-  
+## Contributing
+
+
+
+## Tests
+
+To run tests, run the following command:
+
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at 
     
-  ## Contributing
+You can find more of my work at [${data.github}](https://github.com/$}`
   
-  
-  
-  ## Tests
-  
-  To run tests, run the following command:
-  
-  
-  ## Questions
-  
-  If you have any questions about the repo, open an issue or contact me directly at 
-     
-    You can find more of my work at [${data.github}](https://github.com/$}`
-    
-  
+
 }
 
 module.exports = generateMarkdown;

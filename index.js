@@ -39,7 +39,7 @@ const questions = [
       type: 'list',
       name: 'license',
       message: "What kind of license does your project have?",
-      choices: ['MIT', 'Apache', 'GNU', 'ISC']
+      choices: ['MIT', 'GNU', 'ISC']
   },
   {
       type: 'input',
@@ -67,31 +67,32 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(input) {
-  var readMeText = `# ${input.title}
-##Table of Contents 
-[Description](#description)
-[Installation](#installation)
-[Usage](#usage)
-[License](#license)
-[Contributing](#contributing)
-[Testing](#testing)
-[Questions](#questions)
-## Description 
-${input.description}
-## Installation 
-${input.installation}
-## Usage
-${input.usage}
-## License
-${input.license}
-## Contributing
-${input.contributions}
-## Testing
-${input.test}
-## Questions 
-(${input.github})
-${input.email}`
+function writeToFile(readMeText) {
+//   var readMeText = `# ${input.title}
+// ##Table of Contents 
+// [Description](#description)
+// [Installation](#installation)
+// [Usage](#usage)
+// [License](#license)
+// [Contributing](#contributing)
+// [Testing](#testing)
+// [Questions](#questions)
+// ## Description 
+// ${input.description}
+// ## Installation 
+// ${input.installation}
+// ## Usage
+// ${input.usage}
+// ## License
+// ${input.license}
+// ## Contributing
+// ${input.contributions}
+// ## Testing
+// ${input.test}
+// ## Questions 
+// (${input.github})
+// ${input.email}`
+
 
 fs.writeFile("README.md", readMeText, (err) => {
     console.log(err)
@@ -105,7 +106,9 @@ fs.writeFile("README.md", readMeText, (err) => {
 function init() {
   inquirer.prompt(questions)
       .then((answers) => {
-          writeToFile(answers)
+          const md = generateMarkdown(answers)
+        
+          writeToFile(md)
 
       })
 
