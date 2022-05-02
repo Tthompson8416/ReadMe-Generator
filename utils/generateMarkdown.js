@@ -13,7 +13,7 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+function renderLicenseLink(licenseLink) {
   if (licenseLink === "MIT") {
     return `[MIT License](https://spdx.org/licenses/MIT.html)."`;
   } else if (licenseLink === "GNU") {
@@ -26,10 +26,10 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(licenseLink) {
   return `## License 
 
-${renderLicenseLink(license)}`
+${renderLicenseLink(licenseLink)}`
 }
 
 

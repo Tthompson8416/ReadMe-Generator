@@ -1,6 +1,6 @@
-# v
+# g
 
-![License: ISC](https://img.shields.io/badge/License-ISC-red.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 ## Description
@@ -27,7 +27,7 @@ To install necessary dependencies, run the following command:
 
 ## License 
 
-undefined
+[MIT License](https://spdx.org/licenses/MIT.html)."
 
   
 ## Contributing
@@ -43,4 +43,4 @@ To run tests, run the following command:
 
 If you have any questions about the repo, open an issue or contact me directly at 
     
-You can find more of my work at [b](https://github.com/$}
+You can find more of my work at [g](https://github.com/$}
