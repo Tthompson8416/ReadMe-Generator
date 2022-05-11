@@ -3,12 +3,11 @@
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
-} else if (license === "GNU") {
-  return `![License: GNU](https://img.shields.io/badge/License-GNU-green.svg)`; 
-} else if (license === "ISC") {
-  return `![License: ISC](https://img.shields.io/badge/License-ISC-red.svg)`;
-  
-}
+  } else if (license === "GNU") {
+    return `![License: GNU](https://img.shields.io/badge/License-GNU-green.svg)`;
+  } else if (license === "ISC") {
+    return `![License: ISC](https://img.shields.io/badge/License-ISC-red.svg)`;
+  }
 }
 
 // TODO: Create a function that returns the license link
@@ -20,8 +19,7 @@ function renderLicenseLink(licenseLink) {
     return `[GNU License](https://spdx.org/licenses/GNU.html)."`;
   } else if (licenseLink === "ISC") {
     return `[ISC License](https://spdx.org/licenses/ISC.html)."`;
-
-}
+  }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -29,10 +27,8 @@ function renderLicenseLink(licenseLink) {
 function renderLicenseSection(licenseLink) {
   return `## License 
 
-${renderLicenseLink(licenseLink)}`
+${renderLicenseLink(licenseLink)}`;
 }
-
-
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -79,9 +75,7 @@ To run tests, run the following command:
 
 If you have any questions about the repo, open an issue or contact me directly at 
     
-You can find more of my work at [${data.github}](https://github.com/$}`
-  
-
+You can find more of my work at [${data.github}](https://github.com/$}`;
 }
 
 module.exports = generateMarkdown;
